@@ -1,8 +1,7 @@
-import "./style.css";
+import "../style.css";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import * as THREE from "three";
 import { MindARThree } from "mind-ar/dist/mindar-image-three.prod.js";
-//const THREE = window.MINDAR.IMAGE.THREE;
 
 const loadGTLF = (path) => {
   return new Promise((resolve, reject) => {
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const start = async () => {
     const mindarThree = new MindARThree({
       container: document.body, //body om fullskärm
-      imageTargetSrc: "./targets.mind",
+      imageTargetSrc: "/assets/targets.mind",
     });
     const { renderer, scene, camera } = mindarThree;
 
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
     scene.add(pointLight, ambientLight, directionalLight);
 
-    const gltf = await loadGTLF("./stemcell.gltf");
+    const gltf = await loadGTLF("/assets/stemcell.gltf");
     gltf.scene.scale.set(0.2, 0.2, 0.2);
     gltf.scene.position.set(0, 0, 0);
     gltf.scene.userData.clickable = true;

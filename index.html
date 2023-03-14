@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), fullscreen=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), vr=(), xr-spatial-tracking=()"
+    />
     <title>Cell app</title>
     <!-- <script type="importmap">
       {
@@ -15,8 +18,7 @@
         }
       }
     </script> -->
-    <script type="module" src="/main.js"></script>
-    <script type="module" src="/ar.js"></script>
+    <script type="module" src="/src/ar.js"></script>
   </head>
   <body>
     <div id="app"></div>
