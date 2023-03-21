@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
     scene.add(pointLight, ambientLight, directionalLight);
 
-    const gltf = await loadGTLF("/assets/stemcell.gltf");
+    const gltf = await loadGTLF("/assets/stemcellSplit.glb");
     gltf.scene.scale.set(0.2, 0.2, 0.2);
     gltf.scene.position.set(0, 0, 0);
     gltf.scene.userData.clickable = true;
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const anchor = mindarThree.addAnchor(0); // index noll pga först i listan av target markers från mindAR
     anchor.group.add(gltf.scene);
 
-    const listener = new THREE.AudioListener();
-    camera.add(listener);
+    //const listener = new THREE.AudioListener();
+    // camera.add(listener);
 
     //const audioClip = await loadAudio("./confettiSound.m4a");
     //const audio = new THREE.Audio(listener);
@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const mouse = new THREE.Vector2();
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-      //const mouseX = (e.clientX / window.innerWidth) * 2 - 1; // x-coords för klicket, normaliserar för att få range -1 till1
-      //const mouseY = -1 * ((e.clientY / window.innerWidth) * 2 - 1); // -1 för går åt andra hållet av ngn anledning
 
       const raycaster = new THREE.Raycaster();
       raycaster.setFromCamera(mouse, camera);
@@ -85,8 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     await mindarThree.start();
     renderer.setAnimationLoop(() => {
-      gltf.scene.rotation.x += 0.01;
-      gltf.scene.rotation.y += 0.005;
+      // gltf.scene.rotation.x += 0.01;
+      // gltf.scene.rotation.y += 0.005;
       renderer.render(scene, camera);
     });
   };

@@ -9,17 +9,18 @@ import {
 const form = document.querySelector("form");
 const nameInput = document.querySelector("#nameInput");
 const passwordInput = document.querySelector("#password");
-// const submitButton = document.querySelector("#submitButton");
+//const submitButton = document.querySelector("#submitButton");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const name = nameInput.value;
   const password = passwordInput.value;
-  login(name, password);
+  //login(name, password);
+  register(name, password);
 });
 
 // app
-async function register(name, password) {
+function register(name, password) {
   //validation
   createUserWithEmailAndPassword(auth, name, password)
     .then(function () {
@@ -38,6 +39,8 @@ function writeUserData(name, userID) {
   set(ref(database, "users/" + userID), {
     username: name,
     dateLoggedIn: Date(),
+    dateSeconds: Date.now(),
+    clickedButton: 0,
   })
     .then(() => {
       // redirect to info.html after data is inserted into the database
