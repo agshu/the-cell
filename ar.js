@@ -1,7 +1,6 @@
-//import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { MindARThree } from "mind-ar/dist/mindar-image-three.prod.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import * as THREE from "three";
-import { GLTFLoader } from "GLTFLoader";
+import { MindARThree } from "mind-ar/dist/mindar-image-three.prod.js";
 
 const loadGTLF = (path) => {
   return new Promise((resolve, reject) => {
