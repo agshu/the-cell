@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^4.0.3",
     "nodemon": "^2.0.21",
     "vite": "^4.1.0"
   },
