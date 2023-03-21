@@ -1,9 +1,11 @@
 //import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-//import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import * as THREE from "three";
+import { MindARThree } from "mind-ar/dist/mindar-image-three.prod.js";
 
-import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
-import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
-import { MindARThree } from "https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-three.prod.js";
+// //import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
+// //import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+// import { MindARThree } from "https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-three.prod.js";
 
 const loadGTLF = (path) => {
   return new Promise((resolve, reject) => {
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
     scene.add(pointLight, ambientLight, directionalLight);
 
-    const gltf = await loadGTLF("./stemcell.glb");
+    const gltf = await loadGTLF("assets/stemcell.gltf");
     gltf.scene.scale.set(0.2, 0.2, 0.2);
     gltf.scene.position.set(0, 0, 0);
     gltf.scene.userData.clickable = true;
