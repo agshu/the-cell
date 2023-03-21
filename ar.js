@@ -1,6 +1,9 @@
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import * as THREE from "three";
-import { MindARThree } from "mind-ar/dist/mindar-image-three.prod.js";
+//import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+//import * as THREE from "three";
+
+import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
+import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { MindARThree } from "https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-three.prod.js";
 
 const loadGTLF = (path) => {
   return new Promise((resolve, reject) => {
