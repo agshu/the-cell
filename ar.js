@@ -1,6 +1,6 @@
-import { GLTFLoader } from "./node_modules/three/examples/jsm/loaders/GLTFLoader.js";
-import { MindARThree } from "./node_modules/mind-ar/dist/mindar-image-three.prod.js";
-import * as THREE from "./node_modules/three/build/three.module.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { MindARThree } from "mind-ar/dist/mindar-image-three.prod.js";
+import * as THREE from "three";
 
 const loadGTLF = (path) => {
   return new Promise((resolve, reject) => {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
     scene.add(pointLight, ambientLight, directionalLight);
 
-    const gltf = await loadGTLF("./stemcell.gltf");
+    const gltf = await loadGTLF("./stemcell.glb");
     gltf.scene.scale.set(0.2, 0.2, 0.2);
     gltf.scene.position.set(0, 0, 0);
     gltf.scene.userData.clickable = true;
